@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SGP-Bench</title>
+  <title>FormalMATH-Bench</title>
     <style>
         .hidden {
             display: none;
@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> FormalMATH: Benchmarking Formal Mathematical Reasoning of Large Language Models </title>
 
-  <link rel="icon" href="./static/images/sgp_icon.png">
+  <link rel="icon" href="./static_formalmath/images/logo_transparent.png">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -61,8 +61,8 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title is-bold">
-            <img src="static/images/sgp_icon.png" style="width:1em;vertical-align: middle" alt="Logo"/> 
-            <span class="mmmu" style="vertical-align: middle">SGP-Bench</span>
+            <img src="static_formalmath/images/logo_transparent.png" style="width:1em;vertical-align: middle" alt="Logo"/> 
+            <span class="mmmu" style="vertical-align: middle">FormalMATH-Bench</span>
             </h1>
           <h2 class="subtitle is-3 publication-subtitle">
             FormalMATH: Benchmarking Formal Mathematical Reasoning of Large Language Models
@@ -235,7 +235,7 @@
       </div>
     </div>
     <!--/ Abstract. -->
-</div>
+  </div>
 </section>
 
 <!-- BUILDING SECTION -->
@@ -245,6 +245,17 @@
   </div>
 </section>
 
+
+
+<!-- <section class="section" style="padding:0;">
+  <div class="container">
+    <section class="hero is-light is-small"> 
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu">Introduction of FormalMATH</h1>
+      </div>
+    </section>
+  </div>
+</section> -->
 
 <section class="section">
   <div class="container">
@@ -272,16 +283,98 @@
                 <strong>Comprehensive Evaluation of LLM-based Theorem Provers: </strong>Through systematic evaluation of state-of-the-art LLM-driven theorem provers, we reveal critical limitations in domain generalization and formal reasoning. We also find that, in some cases, natural language guidance can negatively impact automated proving, providing important directions for future research.
               </p>
               <br>
-              <img src="static_formalmath/images/performance_compare.png" alt="algebraic reasoning" class="center" style="width:70%;height:auto;">
-              <br>
-              <figcaption style="text-align:center;">Human-AI collaboration pipeline for formal mathematical statement creation and filtering.</figcaption>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
+              <div id="bar-chart" style="width:100%;height:500px;margin:0 auto;"></div>
+              <figcaption style="text-align:center;">
+                Performance comparison of existing theorem provers on the FormalMATH benchmark.
+              </figcaption>
+              <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+              <script>
+                // 算法名与数据
+                const provers = [
+                  "Kimina-Prover",      // 16.46
+                  "STP",                // 13.87
+                  "Goedel-Prover",      // 13.53
+                  "BFS-Prover",         // 11.13
+                  "DeepSeek-V1.5-RL",   // 10.18
+                  "DeepSeek-V1.5-SFT",  // 8.97
+                  "InternLM-Prover"     // 1.16
+                ];
+                const values = [16.46, 13.87, 13.53, 11.13, 10.18, 8.97, 1.16];
+                const colors = [
+                  "#004182", "#5e87b0", "#85a4c3", "#bf9100", "#bbcdde", "#e6ecf2", "#ffdb3f"
+                ];
+              
+                // 创建多个trace，但确保它们是同一类型的bar
+                const traces = provers.map((prover, idx) => ({
+                  x: [prover],
+                  y: [values[idx]],
+                  type: "bar",
+                  marker: {
+                    color: colors[idx]
+
+                  },
+                  name: prover,
+                  text: [values[idx].toFixed(2)],
+                  textposition: "outside",
+                  textfont: {size: 18, family: "font-family"},
+                  hoverinfo: 'y+name'
+                }));
+              
+                const layout = {
+                  yaxis: {
+                    range: [0, 19],
+                    title: {
+                      text: 'Performance (%)',
+                      font: {size: 20, family: "font-family"}
+                    },
+                    tickfont: {size: 18, family: "font-family"},
+                    showgrid: true,
+                    gridcolor: '#e5e5e5'
+                  },
+                  xaxis: {
+                    tickfont: {size: 20, family: "font-family"},
+                    showline: false,
+                    showgrid: false,
+                    zeroline: false,
+                    showticklabels: false
+                  },
+                  legend: {
+                    traceorder: 'reversed',
+                    orientation: 'h',
+                    x: 0.5,
+                    xanchor: 'center',
+                    y: 1.0,
+                    yanchor: 'bottom',
+                    font: {size: 20, family: "font-family"},
+                    itemwidth: 20,
+                    itemsizing: "constant"
+                  },
+                  margin: {l: 60, r: 40, t: 100, b: 20},
+                  plot_bgcolor: 'white',
+                  paper_bgcolor: 'white',
+                  hovermode: 'closest',
+                  // 关键改动：使用barmode: 'stack'（堆叠模式）而不是'group'
+                  // 这让我们能同时使用多个trace并控制间隙
+                  barmode: 'stack',
+                  // 控制柱子间的间隙
+                  bargap: 0.4,
+                  showlegend: true
+                };
+              
+                // 创建一个不可见的trace作为占位符
+                const invisibleTrace = {
+                  x: provers,
+                  y: Array(provers.length).fill(0),
+                  type: 'bar',
+                  marker: {color: 'rgba(0,0,0,0)'},
+                  showlegend: false,
+                };
+              
+                // 使用全部trace创建图表
+                Plotly.newPlot('bar-chart', [invisibleTrace, ...traces], layout, {displayModeBar: false});
+              </script>
+  </section>
 
 
   <section class="section">
@@ -791,19 +884,21 @@
     </div>
   </section>
 
+</section>
 <br>
 <br>
 
 
 
 <!-- Visualization SECTION -->
+
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
     <h1 class="title is-1 mmmu">Delving Deep into Common Error Patterns of Existing Provers</h1>
   </div>
 </section>
 
-<div class="container">
+
 
   <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
   <section class="section">

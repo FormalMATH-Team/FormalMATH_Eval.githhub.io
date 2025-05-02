@@ -130,7 +130,7 @@
             <span class="author-block"><sup style="color:#9b51e0;">5</sup>2077AI,</span><br>
             <span class="author-block"><sup style="color:#ffc107;">6</sup>University of California, Los Angeles,</span><br>
             <span class="author-block"><sup style="color:#28a745;">7</sup>Max Planck Institute for Intelligent Systems, Tübingen,</span><br>
-            <span class="author-block"><sup style="color:#ed4b82;">†</sup>Joint first author</span>
+            <span class="author-block"><sup style="color:#ed4b82;">†</sup>Equal Contributions</span>
           </div>
 
           <br>
@@ -237,7 +237,370 @@
     <!--/ Abstract. -->
   </div>
 </section>
+<div class="container">
+  <div class="columns is-centered m-6">
+    <div class="column is-full has-text-centered content">
+      <button id="toggleButton" onclick="changeButtonText()" style="font-size: 1.75rem; font-weight: bold;">
+        <b>FormalMATH-All Leaderboard</b> (Click to Switch)
+      </button>
+      <div class="model-labels-container">
+          <span class="leaderboard-label" style="background-color: rgba(249, 242, 248, 1);">Best-First Tree-Search Methods</span>
+          <span class="leaderboard-label" style="background-color: rgba(255, 208, 80, 0.15);">Single-Pass Generation Methods</span>
+      </div>
+        <!-- Validation Set Leaderboard -->
+        <table id="table1" class="js-sort-table">
+          <tr>
+            <td class="js-sort-number"><strong>Reset</strong></td>
+            <td class="js-sort-string"><strong>Size</strong></td>
+            <td class="js-sort-date"><strong>Date</strong></td>
+            <td class="js-sort-number"><strong>Sampling Budget</strong></td>
+            <td class="js-sort-number"><strong>Overall</strong></td>
 
+            <!-- <td class="js-sort-number"><strong>Count</strong></td>
+            <td class="js-sort-number"><strong>Color</strong></td>
+            <td class="js-sort-number"><strong>Shape</strong></td>
+            <td class="js-sort-number"><strong>Reasoning</strong></td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/MoonshotAI/Kimina-Prover-Preview/tree/master">
+                  <b>Kimina-Prover</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2025-4-14</td>
+            <td>32</td>
+            <td>16.46</td>
+            <!-- <td>45.9</td>
+            <td>56.8</td>
+            <td>87.3</td>
+            <td>75.2</td>
+            <td>50.4</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/kfdong/STP?tab=readme-ov-file">
+                  <b>STP</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2025-03-20</td>
+            <td>32</td>
+            <td>13.87</td>
+            <!-- <td>78.7</td>
+            <td>55.3</td>
+            <td>83.2</td>
+            <td>69.6</td>
+            <td>47.1</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/Goedel-LM/Goedel-Prover">
+                  <b>Goedel-Prover-SFT</b>
+              </a>
+            </td>
+            <td>7B</13td>
+            <td>2025-02-11</td>
+            <td>32</td>
+            <td>13.53</td>
+            <!-- <td>39.8</td>
+            <td>50.4</td>
+            <td>79.1</td>
+            <td>70.9</td>
+            <td>41.4</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/deepseek-ai/DeepSeek-Prover-V1.5">
+                  <b>DeepSeek-V1.5-RL</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-08-15</td>
+            <td>32</td>
+            <td>10.18</td>
+            <!-- <td>76.4</td>
+            <td>53.9</td>
+            <td>83.2</td>
+            <td>68.7</td>
+            <td>41.2</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/deepseek-ai/DeepSeek-Prover-V1.5">
+                  <b>DeepSeek-V1.5-SFT</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-08-15</td>
+            <td>32</td>
+            <td>8.97</td>
+            <!-- <td>76.4</td>
+            <td>53.9</td>
+            <td>83.2</td>
+            <td>68.7</td>
+            <td>41.2</td> -->
+          </tr>
+          <tr style="background-color: rgba(255, 208, 80, 0.15);">
+            <td style="text-align: left;">
+              <a href="https://github.com/InternLM/InternLM-Math">
+                  <b>InternLM-Prover</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-10-21</td>
+            <td>1×32×100</td>
+            <td>11.13</td>
+            <!-- <td>26.4</td>
+            <td>39.8</td>
+            <td>75.0</td>
+            <td>61.0</td>
+            <td>30.1</td> -->
+          </tr>
+          <tr style="background-color: rgba(255, 208, 80, 0.15);">
+            <td style="text-align: left;">
+              <a href="https://huggingface.co/ByteDance-Seed/BFS-Prover">
+                  <b>BFS-Prover</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2025-2-25</td>
+            <td>1×32×100</td>
+            <td>1.16</td>
+            <!-- <td>26.4</td>
+            <td>39.8</td>
+            <td>75.0</td>
+            <td>61.0</td>
+            <td>30.1</td> -->
+          </tr>
+        </table>
+          <p class="validation-desc"> Overall results of different models on the FormalMATH-All.</p>
+        <!-- SGP-Bench (CAD) Leaderboard -->
+        <table id="table2" class="js-sort-table hidden">
+          <tr>
+            <td class="js-sort-number"><strong>Reset</strong></td>
+            <td class="js-sort-string"><strong>Size</strong></td>
+            <td class="js-sort-date"><strong>Date</strong></td>
+            <td class="js-sort-number"><strong>Sampling Budget</strong></td>
+            <td class="js-sort-number"><strong>Overall</strong></td>
+            <!-- <td class="js-sort-number"><strong>3D</strong></td>
+            <td class="js-sort-number"><strong>3D<sub>recon</sub></strong></td>
+            <td class="js-sort-number"><strong>2D</strong></td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/MoonshotAI/Kimina-Prover-Preview/tree/master">
+                  <b>Kimina-Prover</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2025-4-14</td>
+            <td>32</td>
+            <td>48.94</td>
+            <!-- <td>45.9</td>
+            <td>56.8</td>
+            <td>87.3</td>
+            <td>75.2</td>
+            <td>50.4</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/kfdong/STP?tab=readme-ov-file">
+                  <b>STP</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2025-03-20</td>
+            <td>32</td>
+            <td>48.59</td>
+            <!-- <td>78.7</td>
+            <td>55.3</td>
+            <td>83.2</td>
+            <td>69.6</td>
+            <td>47.1</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/kfdong/STP?tab=readme-ov-file">
+                  <b>STP</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2025-03-20</td>
+            <td>3200</td>
+            <td>53.17</td>
+            <!-- <td>78.7</td>
+            <td>55.3</td>
+            <td>83.2</td>
+            <td>69.6</td>
+            <td>47.1</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/Goedel-LM/Goedel-Prover">
+                  <b>Goedel-Prover-SFT</b>
+              </a>
+            </td>
+            <td>7B</13td>
+            <td>2025-02-11</td>
+            <td>32</td>
+            <td>46.70</td>
+            <!-- <td>39.8</td>
+            <td>50.4</td>
+            <td>79.1</td>
+            <td>70.9</td>
+            <td>41.4</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/Goedel-LM/Goedel-Prover">
+                  <b>Goedel-Prover-SFT</b>
+              </a>
+            </td>
+            <td>7B</13td>
+            <td>2025-02-11</td>
+            <td>3200</td>
+            <td>49.41</td>
+            <!-- <td>39.8</td>
+            <td>50.4</td>
+            <td>79.1</td>
+            <td>70.9</td>
+            <td>41.4</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/deepseek-ai/DeepSeek-Prover-V1.5">
+                  <b>DeepSeek-V1.5-RL</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-08-15</td>
+            <td>32</td>
+            <td>47.98</td>
+            <!-- <td>76.4</td>
+            <td>53.9</td>
+            <td>83.2</td>
+            <td>68.7</td>
+            <td>41.2</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/deepseek-ai/DeepSeek-Prover-V1.5">
+                  <b>DeepSeek-V1.5-RL</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-08-15</td>
+            <td>3200</td>
+            <td>50.35</td>
+            <!-- <td>76.4</td>
+            <td>53.9</td>
+            <td>83.2</td>
+            <td>68.7</td>
+            <td>41.2</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/deepseek-ai/DeepSeek-Prover-V1.5">
+                  <b>DeepSeek-V1.5-SFT</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-08-15</td>
+            <td>32</td>
+            <td>40.40</td>
+            <!-- <td>76.4</td>
+            <td>53.9</td>
+            <td>83.2</td>
+            <td>68.7</td>
+            <td>41.2</td> -->
+          </tr>
+          <tr style="background-color: rgba(249, 242, 248, 1);">
+            <td style="text-align: left;">
+              <a href="https://github.com/deepseek-ai/DeepSeek-Prover-V1.5">
+                  <b>DeepSeek-V1.5-SFT</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-08-15</td>
+            <td>3200</td>
+            <td>46.82</td>
+            <!-- <td>76.4</td>
+            <td>53.9</td>
+            <td>83.2</td>
+            <td>68.7</td>
+            <td>41.2</td> -->
+          </tr>
+          <tr style="background-color: rgba(255, 208, 80, 0.15);">
+            <td style="text-align: left;">
+              <a href="https://github.com/InternLM/InternLM-Math">
+                  <b>InternLM-Prover</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-10-21</td>
+            <td>1×32×100</td>
+            <td>7.87</td>
+            <!-- <td>26.4</td>
+            <td>39.8</td>
+            <td>75.0</td>
+            <td>61.0</td>
+            <td>30.1</td> -->
+          </tr>
+          <tr style="background-color: rgba(255, 208, 80, 0.15);">
+            <td style="text-align: left;">
+              <a href="https://github.com/InternLM/InternLM-Math">
+                  <b>InternLM-Prover</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2024-10-21</td>
+            <td>32×32×100</td>
+            <td>25.65</td>
+            <!-- <td>26.4</td>
+            <td>39.8</td>
+            <td>75.0</td>
+            <td>61.0</td>
+            <td>30.1</td> -->
+          </tr>
+          <tr style="background-color: rgba(255, 208, 80, 0.15);">
+            <td style="text-align: left;">
+              <a href="https://huggingface.co/ByteDance-Seed/BFS-Prover">
+                  <b>BFS-Prover</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2025-2-25</td>
+            <td>1×32×100</td>
+            <td>27.10</td>
+            <!-- <td>26.4</td>
+            <td>39.8</td>
+            <td>75.0</td>
+            <td>61.0</td>
+            <td>30.1</td> -->
+          </tr>    
+          <tr style="background-color: rgba(255, 208, 80, 0.15);">
+            <td style="text-align: left;">
+              <a href="https://huggingface.co/ByteDance-Seed/BFS-Prover">
+                  <b>BFS-Prover</b>
+              </a>
+            </td>
+            <td>7B</td>
+            <td>2025-2-25</td>
+            <td>32×32×100</td>
+            <td>45.88</td>
+            <!-- <td>26.4</td>
+            <td>39.8</td>
+            <td>75.0</td>
+            <td>61.0</td>
+            <td>30.1</td> -->
+          </tr>      
+        </table>
+          <p class="test-desc hidden"> Overall results of different models on the FormalMATH-Lite.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- BUILDING SECTION -->
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
@@ -901,7 +1264,7 @@
 
 
   <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
-  <section class="section">
+  <!-- <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -933,7 +1296,223 @@
     </div>
   </section>
   </div>
+</section> -->
+
+
+<div class="container">
+
+
+
+
+  <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Setup</h2>
+          <div class="content has-text-justified">
+            <p>
+              We analyze and define common error patterns found in existing theorem provers, using advanced general-purpose LLMs (e.g., o4-mini) to automate error diagnosis and classification. Our method extracts verbalized features from proof failures, then assigns predefined error categories using a second prompt-driven step. We analyze 100 randomly selected failed proof attempts from each prover, and domain experts manually inspect and correct the annotations. The results, presented in a table, highlight the five most common error patterns and provide insights into proof failure modes.
+            </p>
+            <img src="static_formalmath/images/error.png" alt="algebraic reasoning" class="center">
+            <br>
+          </div>  
+          <h2 class="title is-3">Case Study</h2>
+          <div class="content has-text-justified">
+            <style>
+              .gray-background {
+                background-color: #f0f0f0;  /* 灰色背景 */
+                color: #333;               /* 深灰色文字 */
+                padding: 5px;              /* 内边距 */
+                border-radius: 3px;        /* 圆角 */
+              }
+            </style>
+            <p>
+              We explore several error patterns, starting with the improper use of automation tactics in Lean4 provers. Over-reliance on tactics like <span class="gray-background">aesop</span>, <span class="gray-background">simp</span>, and <span class="gray-background">linarith</span> can expand the search space and lead to non-termination or unsolvable goals. We also highlight the provers' difficulties handling complex inequalities, leading to proof failures, and redundant hypotheses that clutter the proof process. Incomplete proofs are another common issue, where provers generate unfinished proofs without properly justifying intermediate reasoning steps, leading to shallow or incomplete conclusions.
+            </p>
+<style>
+      .proof-table {
+          border-collapse: collapse;
+          width: 100%;
+          margin: 20px 0;
+          font-size: 14px;
+          table-layout: fixed;
+      }
+      .proof-table-header {
+          text-align: center;
+          vertical-align: middle;
+          padding: 12px 8px;
+          background-color: #f4f4f4;
+          font-weight: bold;
+      }
+      .proof-table td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          vertical-align: top;
+          text-align: center;
+          word-wrap: break-word;
+          }
+
+          .proof-table th {
+          border: 1px solid #ddd;
+          padding: 8px;
+          background-color: #f4f4f4;
+          font-weight: bold;
+          text-align: center;
+          vertical-align: middle;
+      }
+      
+      .code-block {
+          background-color: #f8f8f8;
+          padding: 8px;
+          font-family: monospace;
+          white-space: pre-wrap;
+      }
+      .keyword-red {
+      color: rgb(231, 31, 58);
+      }
+      .keyword-blue {
+      color: rgb(5, 7, 167);
+      }
+      .keyword-grey {
+      color: rgb(158, 157, 158);
+      }
+      .highlight {
+          background-color: #f5a5a5;
+      }
+      
+      .explanation {
+          color: black;
+      }
+      
+      .bold-title {
+          font-weight: bold;
+      }
+      
+      .border-bottom {
+          border-bottom: 2px solid #000;
+      }
+      </style>
+      
+      <table class="proof-table">
+          <tr>
+            <th style="text-align:center; vertical-align:middle;">Lean4 Statement</th>
+            <th style="text-align:center; vertical-align:middle;">Prover Output</th>
+            <th style="text-align:center; vertical-align:middle;">Explanation</th>
+          </tr>
+          <tr class="border-bottom">
+              <td>
+                  <div class="code-block">
+<span class="keyword-red">theorem</span> omni_theorem_4000 (f : ℝ → ℝ) :
+  (<span class="keyword-blue">∀</span> x y, (x <span class="keyword-blue">+</span> y ^ 2) <span class="keyword-blue">*</span> f (y <span class="keyword-blue">*</span> f x) = x <span class="keyword-blue">*</span> y <span class="keyword-blue">*</span> f (y ^ 2 <span class="keyword-blue">+</span> f x)) ↔
+  <span class="keyword-blue">∀</span> x, f x <span class="keyword-blue">=</span> x ∨ f x <span class="keyword-blue">=</span> 0 ∨ <span class="keyword-blue">∃</span> a, a ≤ <span class="keyword-blue">-</span>1 ∨ a > 0 ∧ f x <span class="keyword-blue">=</span> <span class="keyword-red">if</span> x ≠ -a ^ 2 <span class="keyword-red">then</span> 0 <span class="keyword-red">else</span> a <span class="keyword-blue">:=</span> <span class="keyword-red">by</span>
+                  </div>
+              </td>
+              <td>
+                  <div class="code-block">
+<span class="keyword-grey">-- Proof Before
+-- If f(x) ≠ 0, we need to show that there exists an a such that the conditions hold.</span>
+right
+right
+<span class="highlight">use 0</span>
+<span class="keyword-grey">-- We choose a = 0 to satisfy the conditions.</span>
+<span class="highlight">simp</span>
+<span class="keyword-grey">--Proof After</span>
+                  </div>
+              </td>
+              <td>
+                  <div class="explanation">
+                      <strong>Improper use of Automation Tactics. </strong>
+                      The prover selects the witness a=0 without checking the original side‑condition and then calls simp to close off the goal. This bypasses the essential case‑by‑case analysis of the core functional equation, resulting in an invalid proof that never constructs the required nonzero witness when needed.
+                  </div>
+              </td>
+          </tr>
+          <tr class="border-bottom">
+              <td>
+                  <div class="code-block">
+<span class="keyword-red">theorem</span> DEMIMathAnalysis_50 :
+  Tendsto (<span class="keyword-blue">λ</span> n => sqrt n <span class="keyword-blue">*</span> ∫ x <span class="keyword-red">in</span> univ, 1 / (1 <span class="keyword-blue">+</span> x ^ 2) ^ n) atTop (N (sqrt π)) <span class="keyword-blue">:=</span> <span class="keyword-red">by</span>
+                  </div>
+              </td>
+              <td>
+                  <div class="code-block">
+<span class="keyword-blue">rw</span> [show sqrt = fun x => sqrt x by funext; rfl]
+<span class="highlight">apply stendsto_atTop_mono</span> (fun n => sqrt_le_sqrt <|
+integral_mono_on _ _ <| fun x _ => by
+    gcongr
+    all_goals norm_num)
+<span class="keyword-blue">refine</span>' tendsto_atTop_of_eventually_const (by <span class="keyword-blue">simp</span>)
+all_goals
+    filter_upwards with _
+<span class="highlight"> <;> simp</span>
+                  </div>
+              </td>
+              <td>
+                  <div class="explanation">
+                      <strong>Incomplete Proof. </strong>
+                      The proof invokes tendsto_atTop_mono without establishing any of the analytical prerequisites. The final simp steps trivially handle eventual constancy but leave the main asymptotic argument unresolved.
+                  </div>
+              </td>
+          </tr>
+          <tr class="border-bottom">
+              <td>
+                  <div class="code-block">
+<span class="keyword-red">theorem</span> aime_all_2005_II_1 (n : ℕ) (hn : n ≥ 6) 
+  (h : {s : Finset (Fin n) | s.card = 6}.ncard = 6 <span class="keyword-blue">*</span> {s : Finset (Fin n) | s.card = 3}.ncard) :
+      n = 13 := <span class="keyword-red">by</span>
+                  </div>
+              </td>
+              <td>
+                  <div class="code-block">
+norm_num [Nat.choose] at h
+<span class="keyword-blue">revert</span> n hn h
+<span class="highlight">rintro n hn h</span>
+ring_nf at h
+nlinarith
+                  </div>
+              </td>
+              <td>
+                  <div class="explanation">
+                      <strong>Redundant Hypothesis Introduction. </strong>
+                      After norm_num already rewrites the binomial coefficients, the revert ; rintro sequence merely re‑introduces n, hn, and h in the same form, adding no new information and cluttering the context.
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="code-block">
+<span class="keyword-red">theorem</span> algebra_528739 (a b c : ℝ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c) :
+    1 / (a^3 <span class="keyword-blue">+</span> b^3 <span class="keyword-blue">+</span> a <span class="keyword-blue">*</span> b <span class="keyword-blue">*</span> c) <span class="keyword-blue">+</span> 1 / (b^3 <span class="keyword-blue">+</span> c^3 <span class="keyword-blue">+</span> a <span class="keyword-blue">*</span>b <span class="keyword-blue">*</span> c) <span class="keyword-blue">+</span>
+    1 / (c^3 <span class="keyword-blue">+</span> a^3 <span class="keyword-blue">+</span> a <span class="keyword-blue">*</span> b <span class="keyword-blue">*</span> c) ≤ 1 / (a <span class="keyword-blue">*</span> b <span class="keyword-blue">*</span> c) := <span class="keyword-red">by</span>
+                  </div>
+              </td>
+              <td>
+                  <div class="code-block">
+  <span class="keyword-grey">-- We start by simplifying the left-hand side using the fact that each term is non-negative.</span>
+  have h₀ : 0 < a * b * c := by positivity
+  ...
+  <span class="keyword-grey">-- We then apply the inequality to each term.</span>
+  <span class="keyword-blue">rw</span> [div_le_div_iff] <;>
+  <span class="highlight">nlinarith</span>, [sq_nonneg (a - b), sq_nonneg (b - c), sq_nonneg (c - a)]
+  ...
+                  </div>
+              </td>
+              <td>
+                  <div class="explanation">
+                      <strong>Inadequate Handling of Inequalities. </strong>
+                      The solver attempts to apply nlinarith after a single div_le_div_iff, but the cyclic, high‑degree fractional structure exceeds its linear‐and‐quadratic reasoning scope.
+                  </div>
+              </td>
+          </tr>
+      </table>
+  </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
 </section>
+
 
 
 <!-- @PAN TODO: bibtex -->
@@ -957,7 +1536,7 @@
     <div class="column is-8">
       <div class="content">
         <p>
-          This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+          This website is website adapted from <a href="https://sgp-bench.github.io/">SGP-Bench</a>, licensed under a <a rel="license"
                                               href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
           Commons Attribution-ShareAlike 4.0 International License</a>.
         </p>
@@ -1005,10 +1584,10 @@
 
   function changeButtonText() {
     var button = document.getElementById('toggleButton');
-    if (button.innerHTML.includes("SGP-Bench (SVG) Leaderboard")) {
-      button.innerHTML = "<b style='font-size: larger;'>SGP-Bench (CAD) Leaderboard</b> (Click to Switch)";
+    if (button.innerHTML.includes("FormalMATH-All Leaderboard")) {
+      button.innerHTML = "<b style='font-size: larger;'>FormalMATH-Lite Leaderboard</b> (Click to Switch)";
     } else {
-      button.innerHTML = "<b style='font-size: larger;'>SGP-Bench (SVG) Leaderboard</b> (Click to Switch)";
+      button.innerHTML = "<b style='font-size: larger;'>FormalMATH-All Leaderboard</b> (Click to Switch)";
     }
   }
   document.addEventListener('DOMContentLoaded', function() {

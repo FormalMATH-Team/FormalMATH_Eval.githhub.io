@@ -1314,7 +1314,61 @@
             <p>
               We analyze and define common error patterns found in existing theorem provers, using advanced general-purpose LLMs (e.g., o4-mini) to automate error diagnosis and classification. Our method extracts verbalized features from proof failures, then assigns predefined error categories using a second prompt-driven step. We analyze 100 randomly selected failed proof attempts from each prover, and domain experts manually inspect and correct the annotations. The results, presented in a table, highlight the five most common error patterns and provide insights into proof failure modes.
             </p>
-            <img src="static_formalmath/images/error.png" alt="algebraic reasoning" class="center">
+            <div style="display: flex; justify-content: center;">
+              <div style="width: 80%;">
+                <table style="border-collapse: collapse; font-size: 14px; margin: 0 auto; line-height: 0.8; width: 100%; border: none;">
+                  <colgroup>
+                    <col style="width: 30%;">
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                    <col style="width: 15%;">
+                    <col style="width: 15%;">
+                  </colgroup>
+                  <thead>
+                    <tr style="background-color: transparent;">
+                      <th style="text-align: left; padding: 12px; font-weight: bold; border: none;">Error</th>
+                      <th style="text-align: center; padding: 12px; font-weight: bold; border: none;">DeepSeek-SFT</th>
+                      <th style="text-align: center; padding: 12px; font-weight: bold; border: none;">DeepSeek-RL</th>
+                      <th style="text-align: center; padding: 12px; font-weight: bold; border: none;">Goedel</th>
+                      <th style="text-align: center; padding: 12px; font-weight: bold; border: none;">STP</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-top: 1px solid black; border-left: none; border-right: none; border-bottom: none;">
+                      <td style="text-align: left; padding: 12px; border: none;">Redundant Hypothesis</td>
+                      <td style="text-align: center; padding: 12px; border: none;">18.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">34.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">27.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">24.0%</td>
+                    </tr>
+                    <tr style="border: none;">
+                      <td style="text-align: left; padding: 12px; border: none;">Incomplete Proof</td>
+                      <td style="text-align: center; padding: 12px; border: none;">77.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">62.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">86.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">44.0%</td>
+                    </tr>
+                    <tr style="border: none;">
+                      <td style="text-align: left; padding: 12px; border: none;">Inabilities for Inequality</td>
+                      <td style="text-align: center; padding: 12px; border: none;">8.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">13.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">20.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">1.0%</td>
+                    </tr>
+                    <tr style="border: none;">
+                      <td style="text-align: left; padding: 12px; border: none;">Misuse of Auto tactics</td>
+                      <td style="text-align: center; padding: 12px; border: none;">62.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">65.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">78.0%</td>
+                      <td style="text-align: center; padding: 12px; border: none;">74.0%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="text-align:center;">
+                  Percentage of different Lean4 error patterns in LLM-based provers.
+                </div>
+              </div>
+            </div>
             <br>
           </div>  
           <h2 class="title is-3">Case Study</h2>
